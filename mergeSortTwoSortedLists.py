@@ -30,10 +30,12 @@ class Solution:
         
         if list1.val <= list2.val:
             ls = ListNode(list1.val)
+            list1 = list1.next
         else:
             ls = ListNode(list2.val)
+            list2 = list2.next
         lsHead = ls
-        return self.mergeHelper(list1.next, list2, ls, lsHead)
+        return self.mergeHelper(list1, list2, ls, lsHead)
         
 
 
