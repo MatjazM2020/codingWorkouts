@@ -1,21 +1,23 @@
 class Solution:
-   dict1 = {}
-   dict2 = {}
    def isAnagram(self, s: str, t: str) -> bool:
-      for c in s: 
-         if c in self.dict1:
-            self.dict1[c] += 1
-         else: 
-            self.dict1[c] = 0
-      for c in t: 
-         if c in self.dict2:
-            self.dict2[c] += 1
-         else: 
-            self.dict2[c] = 0
-      if self.dict1 == self.dict2: 
+      dict1 = {}
+      dict2 = {}
+      if len(s) == 1 and len(t) == 1 and s == t:
          return True
-      return False
-
+      for c in s: 
+         if c in dict1:
+            dict1[c] += 1
+         else: 
+            dict1[c] = 1
+      for c in t: 
+         if c in dict2:
+            dict2[c] += 1
+         else: 
+            dict2[c] = 1
+      if dict1 == dict2: 
+         return True
+      else:
+         return False
 
 
 
