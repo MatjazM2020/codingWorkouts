@@ -1,3 +1,8 @@
 # codingWorkouts
 
-Working out my problem solving skills in Python3 and MySQL
+Workouts in: 
+
+-> Python 
+-> MySQL 
+-> shell 
+
