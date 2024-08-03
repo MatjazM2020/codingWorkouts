@@ -1,15 +1,14 @@
 class SnapshotArray:
     def __init__(self, length: int):   
         self.snap_id = 0
-        self.n = length
-        self.snapshots = [[(0, 0)] for i in range(self.n)]
+        self.snapshots = [[(0, 0)] for i in range(length)]
 
     def set(self, index: int, val: int) -> None:
         if self.snap_id == self.snapshots[index][-1][0]:
             self.snapshots[index][-1] = (self.snap_id, val)
         else:
             self.snapshots[index].append((self.snap_id, val))
-
+            
     def snap(self) -> int:
         self.snap_id += 1
         return self.snap_id-1
