@@ -8,19 +8,14 @@ class Solution:
         potions.sort()
         for spell in spells:
             l, r = 0, n
-            while l < r:
+            while l <= r:
                 c = l + (r - l)//2
                 if potions[c]*spell >= success:
-                    r = c
+                    r = c - 1
                 else:
                     l = c + 1
-            if potions[r]*spell >= success:
-                res.append(n+1-r)
-            else:
-                res.append(0)
+            res.append(n-r)
         return res
-    
-    
     
     
 '''
