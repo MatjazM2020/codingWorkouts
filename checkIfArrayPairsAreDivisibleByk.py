@@ -11,9 +11,7 @@ class Solution:
         for i in range(1,(k//2)+1):
             if remCount[i] != remCount[k-i]: return False
         if remCount[0]%2 != 0: return False
-        if k%2 == 0 and remCount[(k//2)]%2 != 0: return False
         return True
-    
     
     
 '''
