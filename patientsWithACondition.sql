@@ -1,25 +1,12 @@
-select
-patient_id,  
-patient_name, 
-conditions
-from
-(
-select 
-patient_id, 
-patient_name, 
-conditions, 
-locate(' diab1', concat(' ',conditions)) as diab1
-from 
-Patients
-) as t 
-where not(diab1 = 0)
-
-
+# Write your MySQL query statement below
+select * 
+from Patients
+where conditions like 'DIAB1%'
+or conditions like '% DIAB1%'
 
 
 
 /*
-prob: https://leetcode.com/problems/patients-with-a-condition/description/?envType=study-plan-v2&envId=top-sql-50
 Table: Patients
 
 +--------------+---------+
@@ -35,4 +22,8 @@ This table contains information of the patients in the hospital.
  
 
 Write a solution to find the patient_id, patient_name, and conditions of the patients who have Type I Diabetes. Type I Diabetes always starts with DIAB1 prefix.
-*/ 
+
+Return the result table in any order.
+
+
+*/
