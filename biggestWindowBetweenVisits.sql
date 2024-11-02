@@ -4,7 +4,7 @@ select
 from
 (select 
     user_id
-    , datediff(coalesce(lead(visit_date, 1) over(partition by user_id order by visit_date), '2021-1-1'), visit_date) days
+    , datediff(lead(visit_date, 1, '2021-1-1') over(partition by user_id order by visit_date), visit_date) days
 from UserVisits) x
 group by user_id 
 
