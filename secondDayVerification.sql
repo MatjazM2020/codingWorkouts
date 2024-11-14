@@ -1,11 +1,10 @@
-select 
+select select 
     user_id
 from texts t
 inner join emails e using(email_id)
 where date(action_date - interval 1 day) = date(signup_date)
 and signup_action = 'Verified'
 order by user_id asc
-
 
 
 /*
